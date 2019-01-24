@@ -12,6 +12,7 @@ jobs:
       - run: sudo rm -rf /usr/local/go
       - run: sudo tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz
 
+      - run: sudo ip addr list
       - run: sudo -E /usr/local/go/bin/go test -v -cover -coverprofile=coverage.txt ./...
       - run: bash <(curl -s https://codecov.io/bash)
 

@@ -59,8 +59,11 @@ func (pinger *Pinger) PingContext(ctx context.Context, destination *net.IPAddr) 
 	}
 
 	if err != nil {
+		log.Infof("ping %s, rtt: 0, %v", destination.String(), err)
 		return 0, err
 	}
+	rtt, _ := req.roundTripTime()
+	log.Infof("ping %s, rtt: %s", destination.String(), rtt.String())
 	return req.roundTripTime()
 }
 

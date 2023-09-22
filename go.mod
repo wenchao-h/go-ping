@@ -1,4 +1,4 @@
-module github.com/digineo/go-ping
+module github.com/wenchao-h/go-ping
 
 go 1.15
 
